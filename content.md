@@ -7,7 +7,7 @@ All visible section content is rendered from the JSON block below.
 {
   "boot": [
     "Initializing system...",
-    "Loading portfolio.exe...",
+    "Loading portfolio.sh...",
     "Connecting to server...",
     "[OK] System ready"
   ],

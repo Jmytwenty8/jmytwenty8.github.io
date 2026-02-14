@@ -18,8 +18,16 @@ A hacker-themed portfolio website with terminal aesthetics and typewriter effect
 ### Local Development
 
 1. Clone or download this repository
-2. Open `index.html` in your browser
-3. No build process required - pure HTML, CSS, and JavaScript!
+2. Start a local HTTP server (required for `content.md` loading)
+
+```bash
+cd /Users/jmy/portfolio
+python3 -m http.server 5500
+```
+
+3. Open `http://localhost:5500`
+
+> Opening `index.html` via `file://` will NOT work because browsers block fetching `content.md` for security reasons.
 
 ### Deploy to GitHub Pages
 
@@ -71,7 +79,14 @@ Update that file to change:
 - About, Skills, Experience, Projects, Education, Contact data
 - Resume button labels/paths
 
-> Note: Since content is loaded with `fetch`, use a local server (or GitHub Pages) instead of opening with `file://`.
+To edit the site, you generally only touch:
+- `content.md` (content)
+- `styles.css` (design)
+- `script.js` (behavior)
+
+`index.html` is intentionally kept minimal and should rarely need edits.
+
+> Note: Since content is loaded over HTTP, use a local server (or GitHub Pages) instead of opening with `file://`.
 
 ### Change Colors
 
@@ -89,12 +104,13 @@ Edit `styles.css` and modify the CSS variables in the `:root` selector:
 
 ### Update Content
 
-Edit `index.html` to update your personal information:
-- Contact details
-- Work experience
-- Projects
-- Education
-- Skills
+Edit `content.md` to update:
+- About details + rotating roles
+- Skill groups + tags
+- Experience entries
+- Project entries
+- Education entries
+- Contact cards + resume button
 
 ### Modify Typewriter Speed
 
@@ -113,9 +129,12 @@ const typeInterval = setInterval(() => {
 portfolio/
 ├── assets/
 │   └── Kumar_Jyotirmay_Resume.pdf   # your resume (you add this file)
+├── content.md     # single source of truth for content
 ├── index.html      # Main HTML structure
 ├── styles.css      # Terminal styling and animations
 ├── script.js       # Typewriter effects and interactions
+├── robots.txt      # SEO crawling rules
+├── sitemap.xml     # SEO sitemap
 └── README.md       # Documentation (this file)
 ```
 
@@ -169,6 +188,10 @@ lsof -ti:8000 | xargs kill -9
 - Ensure JavaScript is enabled in your browser
 - Check browser console for errors (F12)
 - Try a different browser
+
+### `content.md` not loading (CORS / file://)
+- Make sure you're using `http://localhost:5500` (local server), not `file://.../index.html`
+- If deploying to GitHub Pages, ensure `content.md` is in the repo root (same folder as `index.html`)
 
 ## 📝 License
 
