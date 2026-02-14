@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Kumar Jyotirmay - Frontend-heavy Fullstack Developer Portfolio"
+    />
+    <meta name="author" content="Kumar Jyotirmay" />
+    <title>jmytwenty8@terminal:~$</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="scanline"></div>
+    <div class="crt-overlay"></div>
+
+    <div class="terminal-container">
+      <!-- Terminal Header -->
+      <div class="terminal-header">
+        <div class="terminal-buttons">
+          <span class="btn-close"></span>
+          <span class="btn-minimize"></span>
+          <span class="btn-maximize"></span>
+        </div>
+        <div class="terminal-title">jmytwenty8@portfolio:~$</div>
+      </div>
+
+      <!-- Terminal Content -->
+      <div class="terminal-body">
+        <div class="terminal-content">
+          <!-- Boot Sequence -->
+          <div id="boot-sequence" class="boot-sequence"></div>
+
+          <!-- Main Content -->
+          <div id="main-content" class="main-content hidden">
+            <!-- ASCII Art Header -->
+            <pre class="ascii-art">
+     ██╗███╗   ███╗██╗   ██╗████████╗██╗    ██╗███████╗███╗   ██╗████████╗██╗   ██╗ █████╗ 
+     ██║████╗ ████║╚██╗ ██╔╝╚══██╔══╝██║    ██║██╔════╝████╗  ██║╚══██╔══╝╚██╗ ██╔╝██╔══██╗
+     ██║██╔████╔██║ ╚████╔╝    ██║   ██║ █╗ ██║█████╗  ██╔██╗ ██║   ██║    ╚████╔╝ ╚█████╔╝
+██   ██║██║╚██╔╝██║  ╚██╔╝     ██║   ██║███╗██║██╔══╝  ██║╚██╗██║   ██║     ╚██╔╝  ██╔══██╗
+╚█████╔╝██║ ╚═╝ ██║   ██║      ██║   ╚███╔███╔╝███████╗██║ ╚████║   ██║      ██║   ╚█████╔╝
+ ╚════╝ ╚═╝     ╚═╝   ╚═╝      ╚═╝    ╚══╝╚══╝ ╚══════╝╚═╝  ╚═══╝   ╚═╝      ╚═╝    ╚════╝ 
+            </pre>
+
+            <!-- Navigation -->
+            <div class="nav-section">
+              <p class="prompt">
+                <span class="user">guest@portfolio</span>:<span class="path"
+                  >~</span
+                >$ <span id="nav-prompt"></span>
+              </p>
+              <div id="nav-commands" class="commands"></div>
+            </div>
+
+            <!-- About Section -->
+            <section id="about" class="section active">
+              <p class="prompt">
+                <span class="user">guest@portfolio</span>:<span class="path"
+                  >~</span
+                >$ <span id="prompt-about"></span>
+              </p>
+              <div class="output">
+                <p id="status-about" class="typing-text"></p>
+                <div id="content-about" class="info-box"></div>
+              </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="section hidden">
+              <p class="prompt">
+                <span class="user">guest@portfolio</span>:<span class="path"
+                  >~</span
+                >$ <span id="prompt-skills"></span>
+              </p>
+              <div class="output">
+                <p id="status-skills" class="typing-text"></p>
+                <div id="content-skills" class="info-box"></div>
+              </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="section hidden">
+              <p class="prompt">
+                <span class="user">guest@portfolio</span>:<span class="path"
+                  >~</span
+                >$ <span id="prompt-experience"></span>
+              </p>
+              <div class="output">
+                <p id="status-experience" class="typing-text"></p>
+                <div id="content-experience" class="info-box"></div>
+              </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="section hidden">
+              <p class="prompt">
+                <span class="user">guest@portfolio</span>:<span class="path"
+                  >~</span
+                >$ <span id="prompt-projects"></span>
+              </p>
+              <div class="output">
+                <p id="status-projects" class="typing-text"></p>
+                <div id="content-projects" class="info-box"></div>
+              </div>
+            </section>
+
+            <!-- Education Section -->
+            <section id="education" class="section hidden">
+              <p class="prompt">
+                <span class="user">guest@portfolio</span>:<span class="path"
+                  >~</span
+                >$ <span id="prompt-education"></span>
+              </p>
+              <div class="output">
+                <p id="status-education" class="typing-text"></p>
+                <div id="content-education" class="info-box"></div>
+              </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="section hidden">
+              <p class="prompt">
+                <span class="user">guest@portfolio</span>:<span class="path"
+                  >~</span
+                >$ <span id="prompt-contact"></span>
+              </p>
+              <div class="output">
+                <p id="status-contact" class="typing-text"></p>
+                <div id="content-contact" class="info-box"></div>
+              </div>
+            </section>
+
+            <!-- Interactive Terminal -->
+            <div class="command-input-section">
+              <p class="prompt">
+                <span class="user">guest@portfolio</span>:<span class="path">~</span>$ interactive_mode --enable
+              </p>
+              <div class="interactive-terminal">
+                <div id="terminal-output" class="terminal-output">
+                  <p class="terminal-line">
+                    <span class="success">[READY]</span> interactive shell online. Type <span class="highlight">help</span>.
+                  </p>
+                </div>
+                <form id="terminal-form" class="terminal-form">
+                  <span class="terminal-prefix">
+                    <span class="user">guest@portfolio</span>:<span class="path">~</span>$
+                  </span>
+                  <input
+                    id="terminal-input"
+                    class="terminal-input"
+                    type="text"
+                    autocomplete="off"
+                    spellcheck="false"
+                    placeholder="try: help | about | skills | projects | contact | resume | theme | clear"
+                  />
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
